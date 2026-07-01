@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 20px 40px;
+    background-color: #000000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+}
+.left-nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.back-btn{
+    background: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.back-btn:hover{
+    background-color: #e50914;
+    border-color: #e50914;
+}
+/* AUTH CONTAINER */
+.auth-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: #aaaaaa;
+    font-size: 18px;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+    color: #ffffff;
+    border-bottom: 2px solid #e50914;
+}
+
+/* FORM */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-section input {
+    padding: 15px;
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-section input::placeholder {
+    color: #aaaaaa;
+}
+
+.submit-btn {
+    padding: 15px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #b20710;
+}
+
+.hidden {
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: #aaaaaa;
+    cursor: default;
+}
