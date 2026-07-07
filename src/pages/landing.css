@@ -49,9 +49,17 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
     margin-bottom: 30px;
-    color: #ffffff;
+    background: linear-gradient(135deg, #ff2a2a 0%, #e50914 40%, #8b0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.15;
+    text-transform: none;
+    filter: drop-shadow(0 0 30px rgba(229, 9, 20, 0.25));
 }
 
 .hero button {

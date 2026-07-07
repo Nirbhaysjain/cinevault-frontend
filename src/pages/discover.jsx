@@ -55,7 +55,10 @@ function Discover() {
 
   const handleWatchlist = (film) => {
     const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) { navigate("/login"); return; }
+    if (!user) {
+      navigate("/login");
+      return;
+    }
 
     fetch("http://localhost:5000/watchlist", {
       method: "POST",
@@ -74,7 +77,10 @@ function Discover() {
 
   const handleLogSubmit = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) { navigate("/login"); return; }
+    if (!user) {
+      navigate("/login");
+      return;
+    }
 
     fetch("http://localhost:5000/log", {
       method: "POST",
@@ -101,14 +107,16 @@ function Discover() {
   const currentYear = new Date().getFullYear();
   const years = Array.from(
     { length: currentYear - 1969 },
-    (_, i) => currentYear - i
+    (_, i) => currentYear - i,
   );
 
   return (
     <div>
       <nav className="navbar">
         <div className="left-nav">
-          <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
+          <button className="back-btn" onClick={() => navigate(-1)}>
+            ← Back
+          </button>
           <div className="logo">CineVault</div>
         </div>
         <div className="nav-links">
@@ -152,8 +160,12 @@ function Discover() {
               <option value="Romantic">❤️ Romantic</option>
               <option value="Heartbroken">💔 Heartbroken</option>
             </select>
-            <button className="btn-log" onClick={handleLogSubmit}>Submit</button>
-            <button className="btn-watchlist" onClick={() => setLogModal(null)}>Cancel</button>
+            <button className="btn-log" onClick={handleLogSubmit}>
+              Submit
+            </button>
+            <button className="btn-watchlist" onClick={() => setLogModal(null)}>
+              Cancel
+            </button>
           </div>
         </div>
       )}
@@ -169,19 +181,32 @@ function Discover() {
         </div>
 
         <div className="filters">
-          <select value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+          <select
+            value={selectedGenre}
+            onChange={(e) => setSelectedGenre(e.target.value)}
+          >
             <option value="">Genre</option>
             {genres.map((g) => (
-              <option key={g.id} value={g.id}>{g.name}</option>
+              <option key={g.id} value={g.id}>
+                {g.name}
+              </option>
             ))}
           </select>
-          <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(e.target.value)}
+          >
             <option value="">Year</option>
             {years.map((y) => (
-              <option key={y} value={y}>{y}</option>
+              <option key={y} value={y}>
+                {y}
+              </option>
             ))}
           </select>
-          <select value={selectedRating} onChange={(e) => setSelectedRating(e.target.value)}>
+          <select
+            value={selectedRating}
+            onChange={(e) => setSelectedRating(e.target.value)}
+          >
             <option value="">Rating</option>
             <option value="9">9+</option>
             <option value="8">8+</option>
@@ -199,15 +224,24 @@ function Discover() {
               <p className="film-rating">
                 ⭐ {film.vote_average ? film.vote_average.toFixed(1) : "N/A"}
               </p>
-              <button className="btn-watchlist" onClick={() => handleWatchlist(film)}>+ Watchlist</button>
-              <button className="btn-log" onClick={() => setLogModal(film)}>Log It</button>
+              <button
+                className="btn-watchlist"
+                onClick={() => handleWatchlist(film)}
+              >
+                + Watchlist
+              </button>
+              <button className="btn-log" onClick={() => setLogModal(film)}>
+                Log It
+              </button>
             </div>
           ))}
         </div>
       </div>
 
       <footer>
-        <p>About | Contact | Github</p>
+        <p>
+          <Link to="/about">About</Link>
+        </p>
       </footer>
     </div>
   );

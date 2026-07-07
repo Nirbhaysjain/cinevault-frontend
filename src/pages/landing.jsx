@@ -26,7 +26,7 @@ function Landing() {
       </nav>
 
       <section className="hero">
-        <h1>Track Films. Discover Yourself</h1>
+        <h1>YOUR PERSONAL FILM DIARY.</h1>
         <Link to="/login">
           <button>GET STARTED</button>
         </Link>
@@ -45,7 +45,9 @@ function Landing() {
       </section>
 
       <footer>
-        <p>About | Contact | Github</p>
+        <p>
+          <Link to="/about">About</Link>
+        </p>
       </footer>
     </div>
   );

@@ -152,7 +152,9 @@ function Profile() {
       )}
 
       <footer>
-        <p>About | Contact | Github</p>
+        <p>
+          <Link to="/about">About</Link>
+        </p>
       </footer>
     </div>
   );
