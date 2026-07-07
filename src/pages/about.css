@@ -1,0 +1,206 @@
+.about-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 40px 24px;
+  position: relative;
+}
+
+.about-back-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  transition: all 0.2s;
+}
+
+.about-back-btn:hover {
+  border-color: #e50914;
+  color: #fff;
+}
+
+.about-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #e50914;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.about-tagline {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.about-section {
+  margin-bottom: 60px;
+}
+
+.about-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  border-left: 4px solid #e50914;
+  padding-left: 14px;
+}
+
+.about-section > p {
+  color: #bbb;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.feature-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.feature-card:hover {
+  border-color: #e50914;
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-badge {
+  background: transparent;
+  border: 1px solid #e50914;
+  color: #e50914;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Challenges */
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.challenge-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.challenge-num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #e50914;
+  opacity: 0.5;
+  min-width: 48px;
+}
+
+.challenge-item h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.challenge-item p {
+  font-size: 0.88rem;
+  color: #777;
+  line-height: 1.6;
+}
+
+/* Developer */
+.developer-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.developer-avatar {
+  font-size: 3rem;
+  background: #1a1a1a;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.developer-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.developer-info p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.developer-info strong {
+  color: #e50914;
+}
+
+.developer-note {
+  margin-top: 10px !important;
+  color: #666 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6;
+}
