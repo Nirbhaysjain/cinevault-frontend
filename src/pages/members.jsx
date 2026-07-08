@@ -18,7 +18,7 @@ function Members() {
     }
     setUser(storedUser);
 
-    fetch("${BASE_URL}/members")
+    fetch(`${BASE_URL}/members`)
       .then((res) => res.json())
       .then((data) => setMembers(data))
       .catch((err) => console.log("Error:", err));
@@ -30,7 +30,7 @@ function Members() {
   }, []);
 
   const handleFollow = (memberId) => {
-    fetch("${BASE_URL}/follow", {
+    fetch(`${BASE_URL}/follow`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ follower_id: user.id, following_id: memberId }),
@@ -50,7 +50,7 @@ function Members() {
   };
 
   const handleUnfollow = (memberId) => {
-    fetch("${BASE_URL}/follow", {
+    fetch(`${BASE_URL}/follow`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ follower_id: user.id, following_id: memberId }),

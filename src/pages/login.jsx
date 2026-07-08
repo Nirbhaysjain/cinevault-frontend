@@ -20,7 +20,7 @@ function Login() {
   }, [location]);
 
   const handleLogin = () => {
-    fetch("${BASE_URL}/login", {
+    fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -38,7 +38,7 @@ function Login() {
   };
 
   const handleSignup = () => {
-    fetch("${BASE_URL}/signup", {
+    fetch(`${BASE_URL}/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),

@@ -61,7 +61,7 @@ function Discover() {
       return;
     }
 
-    fetch("${BASE_URL}/watchlist", {
+    fetch(`${BASE_URL}/watchlist`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -83,7 +83,7 @@ function Discover() {
       return;
     }
 
-    fetch("${BASE_URL}/log", {
+    fetch(`${BASE_URL}/log`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
