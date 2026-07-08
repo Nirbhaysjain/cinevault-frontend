@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./discover.css";
+import BASE_URL from "../config";
 
 const API_KEY = "c810403a4ebce0a9f3a9d53cef99721d";
 const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
@@ -60,7 +61,7 @@ function Discover() {
       return;
     }
 
-    fetch("http://localhost:5000/watchlist", {
+    fetch("${BASE_URL}/watchlist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -82,7 +83,7 @@ function Discover() {
       return;
     }
 
-    fetch("http://localhost:5000/log", {
+    fetch("${BASE_URL}/log", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

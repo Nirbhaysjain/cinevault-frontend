@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./profile.css";
+import BASE_URL from "../config";
 
 function Profile() {
   const navigate = useNavigate();
@@ -17,12 +18,12 @@ function Profile() {
     }
     setUser(storedUser);
 
-    fetch(`http://localhost:5000/logs/${storedUser.id}`)
+    fetch(`${BASE_URL}/logs/${storedUser.id}`)
       .then((res) => res.json())
       .then((data) => setLogs(data))
       .catch((err) => console.log("Error fetching logs:", err));
 
-    fetch(`http://localhost:5000/watchlist/${storedUser.id}`)
+    fetch(`${BASE_URL}/watchlist/${storedUser.id}`)
       .then((res) => res.json())
       .then((data) => setWatchlist(data))
       .catch((err) => console.log("Error fetching watchlist:", err));
@@ -34,7 +35,7 @@ function Profile() {
   };
 
   const handleRemoveLog = (id) => {
-    fetch(`http://localhost:5000/log/${id}`, {
+    fetch(`${BASE_URL}/log/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -45,7 +46,7 @@ function Profile() {
   };
 
   const handleRemoveWatchlist = (id) => {
-    fetch(`http://localhost:5000/watchlist/${id}`, {
+    fetch(`${BASE_URL}/watchlist/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

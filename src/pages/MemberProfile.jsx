@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "./profile.css";
+import BASE_URL from "../config";
 
 function MemberProfile() {
   const navigate = useNavigate();
@@ -15,12 +16,12 @@ function MemberProfile() {
       return;
     }
 
-    fetch(`http://localhost:5000/user/${id}`)
+    fetch(`${BASE_URL}/user/${id}`)
       .then((res) => res.json())
       .then((data) => setMemberUser(data))
       .catch((err) => console.log("Error:", err));
 
-    fetch(`http://localhost:5000/logs/${id}`)
+    fetch(`${BASE_URL}/logs/${id}`)
       .then((res) => res.json())
       .then((data) => setLogs(data))
       .catch((err) => console.log("Error:", err));

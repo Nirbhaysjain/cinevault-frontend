@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./login.css";
+import BASE_URL from "../config";
 
 function Login() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Login() {
   }, [location]);
 
   const handleLogin = () => {
-    fetch("http://localhost:5000/login", {
+    fetch("${BASE_URL}/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -37,7 +38,7 @@ function Login() {
   };
 
   const handleSignup = () => {
-    fetch("http://localhost:5000/signup", {
+    fetch("${BASE_URL}/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password }),

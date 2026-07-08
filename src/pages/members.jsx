@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./members.css";
+import BASE_URL from "../config";
 
 function Members() {
   const navigate = useNavigate();
@@ -17,19 +18,19 @@ function Members() {
     }
     setUser(storedUser);
 
-    fetch("http://localhost:5000/members")
+    fetch("${BASE_URL}/members")
       .then((res) => res.json())
       .then((data) => setMembers(data))
       .catch((err) => console.log("Error:", err));
 
-    fetch(`http://localhost:5000/following/${storedUser.id}`)
+    fetch(`${BASE_URL}/following/${storedUser.id}`)
       .then((res) => res.json())
       .then((data) => setFollowing(data.map((f) => f.following_id)))
       .catch((err) => console.log("Error:", err));
   }, []);
 
   const handleFollow = (memberId) => {
-    fetch("http://localhost:5000/follow", {
+    fetch("${BASE_URL}/follow", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ follower_id: user.id, following_id: memberId }),
@@ -49,7 +50,7 @@ function Members() {
   };
 
   const handleUnfollow = (memberId) => {
-    fetch("http://localhost:5000/follow", {
+    fetch("${BASE_URL}/follow", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ follower_id: user.id, following_id: memberId }),
