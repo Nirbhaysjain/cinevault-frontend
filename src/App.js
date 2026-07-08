@@ -5,6 +5,8 @@ import Login from "./pages/login";
 import Discover from "./pages/discover";
 import Members from "./pages/members";
 import Profile from "./pages/profile";
+import MemberProfile from "./pages/MemberProfile";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/members" element={<Members />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/member/:id" element={<MemberProfile />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
